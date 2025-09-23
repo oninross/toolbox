@@ -1,7 +1,7 @@
 {
   "name": "@oninross/toolbelt",
   "author": "oninross",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "CLI toolbelt for scaffolding, components, and guides.",
   "repository": {
     "type": "git",
