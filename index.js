@@ -24,34 +24,35 @@ if (args.includes("--llm-guide")) {
 
 ## Markup guides
 
-\```
+~~~
 <div className="block">
   <div className="block__element block__element--modifier">
 </div>
-\```
+~~~
 
 ## Styling Guide
 
 ### SCSS Module
 
-\```
+~~~
 .block {
   &__element {
     &--modifier {}
   }
 }
-\```
+~~~
 
 ### Styled Components
 
-\```
+~~~
 import styled from "styled-components";
 
-export const FeatureBanner = styled.div\`
+export const FeatureBanner = styled.div`
   &__element {
     &--modifier {}
-  }\`;
-\```
+  }
+`;
+~~~
 `,
       "utf8"
     );
