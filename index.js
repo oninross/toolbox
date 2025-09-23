@@ -47,11 +47,11 @@ if (args.includes("--llm-guide")) {
 ~~~
 import styled from "styled-components";
 
-export const FeatureBanner = styled.div`
+export const FeatureBanner = styled.div\`
   &__element {
     &--modifier {}
   }
-`;
+\`;
 ~~~
 `,
       "utf8"
