@@ -18,7 +18,8 @@ npx @oninross/toolbox <command>
 | `--create-component, -c` | Run `@oninross/create-component` to scaffold a new component               |
 | `--scaffold`             | Scaffold a Next.js + Storybook project (with TypeScript, ESLint, and SCSS) |
 | `--switch`, `-s`         | Interactively switch which SSH key is used for GitHub pushes               |
-| `--help, -h              | List all available commands                                                |
+| `--clean-modules, -x`    | Remove `node_modules` and `package-lock.json` from the project root        |
+| `--help, -h`             | List all available commands                                                |
 
 ## Examples
 
@@ -46,6 +47,14 @@ Switch SSH key for GitHub pushes:
 npx @oninross/toolbox --switch
 # or
 npx @oninross/toolbox -s
+```
+
+Remove `node_modules` and `package-lock.json`:
+
+```sh
+npx @oninross/toolbox --clean-modules
+# or
+npx @oninross/toolbox -x
 ```
 
 Show help:

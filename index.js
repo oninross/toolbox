@@ -180,30 +180,58 @@ else if (args.includes("--switch") || args.includes("-s")) {
 // ✅ 5. List all available commands
 else if (args.includes("--help") || args.includes("-h")) {
   console.log(`\nAvailable commands in @oninross/toolbox:`);
-  console.log(`  --llm-guide         Generate llm.txt in the project root`);
+  console.log(`  --llm-guide             Generate llm.txt in the project root`);
   console.log(`  --create-component, -c  Run @oninross/create-component`);
-  console.log(`  --scaffold          Scaffold Next.js + Storybook`);
+  console.log(`  --scaffold              Scaffold Next.js + Storybook`);
+  console.log(`  --switch, -s            Switch SSH key for GitHub pushes`);
   console.log(
-    `  --switch, -s         Switch SSH key for GitHub pushes\n  --help, -h         List all available commands in this package`
+    `  --clean-modules, -x     Remove node_modules and package-lock.json`
+  );
+  console.log(
+    `  --help, -h              List all available commands in this package`
   );
 }
+// ✅ 7. Remove node_modules and package-lock.json
+else if (args.includes("--clean-modules") || args.includes("-x")) {
+  try {
+    execSync("rm -rf node_modules package-lock.json", { stdio: "inherit" });
+    console.log("✅ Removed node_modules and package-lock.json");
+  } catch (error) {
+    console.error("❌ Failed to clean modules:", error.message);
+    process.exit(1);
+  }
+}
 
-// ✅ 6. Help text
+// ✅ 6. Remove node_modules and package-lock.json
+else if (args.includes("--clean-modules") || args.includes("-x")) {
+  try {
+    execSync("rm -rf node_modules package-lock.json", { stdio: "inherit" });
+    console.log("✅ Removed node_modules and package-lock.json");
+  } catch (error) {
+    console.error("❌ Failed to clean modules:", error.message);
+    process.exit(1);
+  }
+}
+
+// ✅ 7. Help text
 else {
   console.log(`
 Usage:
-  npx @oninross/toolbox --llm-guide        Generate llm.txt in the project root
-  npx @oninross/toolbox --create-component, -c Run @oninross/create-component
-  npx @oninross/toolbox --scaffold         Scaffold Next.js + Storybook
-  npx @oninross/toolbox --switch           Switch SSH key for GitHub pushes
-  npx @oninross/toolbox -s                 Switch SSH key for GitHub pushes (shorthand)
-  npx @oninross/toolbox --help, -h         List all available commands in this package
+  npx @oninross/toolbox --llm-guide             Generate llm.txt in the project root
+  npx @oninross/toolbox --create-component, -c  Run @oninross/create-component
+  npx @oninross/toolbox --scaffold              Scaffold Next.js + Storybook
+  npx @oninross/toolbox --switch                Switch SSH key for GitHub pushes
+  npx @oninross/toolbox -s                      Switch SSH key for GitHub pushes (shorthand)
+  npx @oninross/toolbox --clean-modules, -x     Remove node_modules and package-lock.json
+  npx @oninross/toolbox --help, -h              List all available commands in this package
 
 Examples:
   npx @oninross/toolbox --llm-guide
   npx @oninross/toolbox --create-component
   npx @oninross/toolbox -c
   npx @oninross/toolbox --scaffold
+  npx @oninross/toolbox --clean-modules
+  npx @oninross/toolbox -x
   npx @oninross/toolbox --help
   npx @oninross/toolbox -h
   `);
