@@ -1,57 +1,57 @@
-# toolbelt
+# toolbox
 
-`toolbelt` is a CLI utility to speed up common frontend project tasks. It provides commands for generating LLM guidelines, scaffolding a Next.js + Storybook project, and running a component generator.
+`toolbox` is a CLI utility to speed up common frontend project tasks. It provides commands for generating LLM guidelines, scaffolding a Next.js + Storybook project, and running a component generator.
 
 ## Installation & Usage
 
-You can run toolbelt directly with npx (no install required):
+You can run toolbox directly with npx (no install required):
 
 ```sh
-npx @oninross/toolbelt <command>
+npx @oninross/toolbox <command>
 ```
 
 ## Available Commands
 
-| Command              | Description                                                                |
-| -------------------- | -------------------------------------------------------------------------- |
-| `--llm-guide`        | Generate `llm.txt` in the project root with LLM guidelines                 |
-| `--create-component` | Run `@oninross/create-component` to scaffold a new component               |
-| `--scaffold`         | Scaffold a Next.js + Storybook project (with TypeScript, ESLint, and SCSS) |
-| `--switch`, `-s`     | Interactively switch which SSH key is used for GitHub pushes               |
-| `--help`             | List all available commands                                                |
+| Command                  | Description                                                                |
+| ------------------------ | -------------------------------------------------------------------------- |
+| `--llm-guide`            | Generate `llm.txt` in the project root with LLM guidelines                 |
+| `--create-component, -c` | Run `@oninross/create-component` to scaffold a new component               |
+| `--scaffold`             | Scaffold a Next.js + Storybook project (with TypeScript, ESLint, and SCSS) |
+| `--switch`, `-s`         | Interactively switch which SSH key is used for GitHub pushes               |
+| `--help, -h              | List all available commands                                                |
 
 ## Examples
 
 Generate LLM guidelines file:
 
 ```sh
-npx @oninross/toolbelt --llm-guide
+npx @oninross/toolbox --llm-guide
 ```
 
 Run the component generator:
 
 ```sh
-npx @oninross/toolbelt --create-component
+npx @oninross/toolbox --create-component
 ```
 
 Scaffold a Next.js + Storybook project:
 
 ```sh
-npx @oninross/toolbelt --scaffold
+npx @oninross/toolbox --scaffold
 ```
 
 Switch SSH key for GitHub pushes:
 
 ```sh
-npx @oninross/toolbelt --switch
+npx @oninross/toolbox --switch
 # or
-npx @oninross/toolbelt -s
+npx @oninross/toolbox -s
 ```
 
 Show help:
 
 ```sh
-npx @oninross/toolbelt --help
+npx @oninross/toolbox --help
 ```
 
 ---

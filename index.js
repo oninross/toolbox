@@ -61,7 +61,7 @@ export const FeatureBanner = styled.div\`
 }
 
 // ✅ 2. Run @oninross/create-component
-else if (args.includes("--create-component")) {
+else if (args.includes("--create-component") || args.includes("-c")) {
   try {
     execSync("npx @oninross/create-component", { stdio: "inherit" });
   } catch (error) {
@@ -178,13 +178,13 @@ else if (args.includes("--switch") || args.includes("-s")) {
 }
 
 // ✅ 5. List all available commands
-else if (args.includes("--help")) {
-  console.log(`\nAvailable commands in @oninross/toolbelt:`);
+else if (args.includes("--help") || args.includes("-h")) {
+  console.log(`\nAvailable commands in @oninross/toolbox:`);
   console.log(`  --llm-guide         Generate llm.txt in the project root`);
-  console.log(`  --create-component  Run @oninross/create-component`);
+  console.log(`  --create-component, -c  Run @oninross/create-component`);
   console.log(`  --scaffold          Scaffold Next.js + Storybook`);
   console.log(
-    `  --switch, -s         Switch SSH key for GitHub pushes\n  --help              List all available commands in this package`
+    `  --switch, -s         Switch SSH key for GitHub pushes\n  --help, -h         List all available commands in this package`
   );
 }
 
@@ -192,17 +192,19 @@ else if (args.includes("--help")) {
 else {
   console.log(`
 Usage:
-  npx @oninross/toolbelt --llm-guide        Generate llm.txt in the project root
-  npx @oninross/toolbelt --create-component Run @oninross/create-component
-  npx @oninross/toolbelt --scaffold         Scaffold Next.js + Storybook
-  npx @oninross/toolbelt --switch           Switch SSH key for GitHub pushes
-  npx @oninross/toolbelt -s                 Switch SSH key for GitHub pushes (shorthand)
-  npx @oninross/toolbelt --help             List all available commands in this package
+  npx @oninross/toolbox --llm-guide        Generate llm.txt in the project root
+  npx @oninross/toolbox --create-component, -c Run @oninross/create-component
+  npx @oninross/toolbox --scaffold         Scaffold Next.js + Storybook
+  npx @oninross/toolbox --switch           Switch SSH key for GitHub pushes
+  npx @oninross/toolbox -s                 Switch SSH key for GitHub pushes (shorthand)
+  npx @oninross/toolbox --help, -h         List all available commands in this package
 
 Examples:
-  npx @oninross/toolbelt --llm-guide
-  npx @oninross/toolbelt --create-component
-  npx @oninross/toolbelt --scaffold
-  npx @oninross/toolbelt --help
+  npx @oninross/toolbox --llm-guide
+  npx @oninross/toolbox --create-component
+  npx @oninross/toolbox -c
+  npx @oninross/toolbox --scaffold
+  npx @oninross/toolbox --help
+  npx @oninross/toolbox -h
   `);
 }
