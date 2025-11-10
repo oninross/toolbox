@@ -12,7 +12,7 @@ const __dirname = path.dirname(__filename);
 const args = process.argv.slice(2);
 
 // ✅ 1. Generate llm.txt
-if (args.includes("--llm-guide")) {
+if (args.includes("--llm-guide") || args.includes("-g")) {
   const targetFile = path.resolve(process.cwd(), "llm.txt");
 
   if (fs.existsSync(targetFile)) {
@@ -180,7 +180,7 @@ else if (args.includes("--switch") || args.includes("-s")) {
 // ✅ 5. List all available commands
 else if (args.includes("--help") || args.includes("-h")) {
   console.log(`\nAvailable commands in @oninross/toolbox:`);
-  console.log(`  --llm-guide             Generate llm.txt in the project root`);
+  console.log(`  --llm-guide, -g         Generate llm.txt in the project root`);
   console.log(`  --create-component, -c  Run @oninross/create-component`);
   console.log(`  --scaffold              Scaffold Next.js + Storybook`);
   console.log(`  --switch, -s            Switch SSH key for GitHub pushes`);

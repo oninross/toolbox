@@ -14,7 +14,7 @@ npx @oninross/toolbox <command>
 
 | Command                  | Description                                                                |
 | ------------------------ | -------------------------------------------------------------------------- |
-| `--llm-guide`            | Generate `llm.txt` in the project root with LLM guidelines                 |
+| `--llm-guide, -g`        | Generate `llm.txt` in the project root with LLM guidelines                 |
 | `--create-component, -c` | Run `@oninross/create-component` to scaffold a new component               |
 | `--scaffold`             | Scaffold a Next.js + Storybook project (with TypeScript, ESLint, and SCSS) |
 | `--switch`, `-s`         | Interactively switch which SSH key is used for GitHub pushes               |
